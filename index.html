@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hyperlink List</title>
+</head>
+<body>
+    <h1>Hyperlink List</h1>
+    <ul>
+    {% for link in links %}
+        <li>
+            <a href="/click/{{ link.id }}">{{ link.title }}</a>
+            (ID: {{ link.id }},
+            Comments: {{ link.comment_cnt }},
+            Points: {{ link.points }},
+            Clicked: {% if link.clicked %}Yes{% else %}No{% endif %})
+        </li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
